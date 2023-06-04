@@ -10,4 +10,5 @@ public class ClientInfo {
     private String clientSecret;
     private String redirectUri;
     private String code;
+    private Integer postId;
 }
