@@ -13,9 +13,10 @@ class AccessTokenParserTest {
         ClientInfo clientInfo = new ClientInfo("clientId",
                 "clientSecret",
                 "redirectUri",
-                "code");
+                "code",
+                4);
 
-        assertDoesNotThrow(()->{
+        assertDoesNotThrow(() -> {
             parser.getAccessToken(clientInfo);
         });
     }
