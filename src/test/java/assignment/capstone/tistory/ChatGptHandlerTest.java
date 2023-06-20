@@ -11,8 +11,9 @@ class ChatGptHandlerTest {
     @Test
     void createGptContent() {
         ChatGptHandler handler = new ChatGptHandler();
+        List<Comment> comments = List.of(new Comment("1", "date", "name", "parentId", "homepage", "content", true));
 
-        List<String> result = handler.generateText("안녕하세요 반가워요");
+        List<String> result = handler.generateText(comments);
 
         assertTrue(result.size() > 0);
     }

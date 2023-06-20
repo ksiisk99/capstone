@@ -14,15 +14,15 @@ import java.util.List;
 @Service
 public class CommentReader {
 
-    public List<Comment> read(String accessToken, Integer postId, String blogName) {
+    public List<Comment> read(BlogInfo blogInfo) {
         List<Comment> comments = new ArrayList<>();
 
         try {
             String url = "https://www.tistory.com/apis/comment/list?"
-                    + "access_token=" + accessToken + "&"
+                    + "access_token=" + blogInfo.getAccessToken() + "&"
                     + "output=json&"
-                    + "blogName=" + blogName + "&"
-                    + "postId=" + postId;
+                    + "blogName=" + blogInfo.getBlogName() + "&"
+                    + "postId=" + blogInfo.getPostId();
 
             URL obj = new URL(url);
 

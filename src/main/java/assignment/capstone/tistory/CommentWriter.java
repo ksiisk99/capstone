@@ -5,19 +5,20 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 @Service
 public class CommentWriter {
 
-    public boolean write(String accessToken, String blogName, Integer postId, String parentId, String content, boolean open) {
+    public boolean write(BlogInfo blogInfo, String parentId, String content, boolean open) {
         try {
             String url = "https://www.tistory.com/apis/comment/write?" +
-                    "access_token=" + accessToken +
+                    "access_token=" + URLEncoder.encode(blogInfo.getAccessToken(), "UTF-8") +
                     "&output=json" +
-                    "&blogName=" + blogName +
-                    "&postId=" + postId +
-                    "&parentId=" + parentId +
-                    "&content=" + content +
+                    "&blogName=" + URLEncoder.encode(blogInfo.getBlogName(), "UTF-8") +
+                    "&postId=" + URLEncoder.encode(String.valueOf(blogInfo.getPostId()), "UTF-8") +
+                    "&parentId=" + URLEncoder.encode(parentId, "UTF-8") +
+                    "&content=" + URLEncoder.encode(content, "UTF-8") +
                     "&secret=" + (open ? 0 : 1);
 
             URL obj = new URL(url);
