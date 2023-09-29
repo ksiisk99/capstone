@@ -1,5 +1,7 @@
 package assignment.capstone.tistory;
 
+import assignment.capstone.dto.BlogInfo;
+import assignment.capstone.service.AutoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

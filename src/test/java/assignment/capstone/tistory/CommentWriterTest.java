@@ -1,5 +1,6 @@
 package assignment.capstone.tistory;
 
+import assignment.capstone.dto.BlogInfo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

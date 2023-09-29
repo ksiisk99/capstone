@@ -1,5 +1,9 @@
-package assignment.capstone.tistory;
+package assignment.capstone.service;
 
+import assignment.capstone.dto.BlogInfo;
+import assignment.capstone.dto.Comment;
+import assignment.capstone.gpt.ChatGptHandler;
+import assignment.capstone.tistory.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

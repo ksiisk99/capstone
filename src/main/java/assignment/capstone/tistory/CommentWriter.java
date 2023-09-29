@@ -1,5 +1,6 @@
 package assignment.capstone.tistory;
 
+import assignment.capstone.dto.BlogInfo;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

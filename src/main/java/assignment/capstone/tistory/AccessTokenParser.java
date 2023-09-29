@@ -1,5 +1,6 @@
 package assignment.capstone.tistory;
 
+import assignment.capstone.dto.ClientInfo;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;

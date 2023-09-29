@@ -1,5 +1,7 @@
 package assignment.capstone.tistory;
 
+import assignment.capstone.dto.BlogInfo;
+import assignment.capstone.dto.Comment;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;

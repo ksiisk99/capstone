@@ -1,5 +1,7 @@
 package assignment.capstone.tistory;
 
+import assignment.capstone.dto.Comment;
+import assignment.capstone.gpt.ChatGptHandler;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

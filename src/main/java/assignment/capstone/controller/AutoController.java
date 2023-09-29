@@ -1,5 +1,7 @@
-package assignment.capstone.tistory;
+package assignment.capstone.controller;
 
+import assignment.capstone.service.AutoService;
+import assignment.capstone.dto.BlogInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
