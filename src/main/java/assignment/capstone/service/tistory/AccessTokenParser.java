@@ -1,4 +1,4 @@
-package assignment.capstone.tistory;
+package assignment.capstone.service.tistory;
 
 import assignment.capstone.dto.ClientInfo;
 import org.springframework.stereotype.Service;

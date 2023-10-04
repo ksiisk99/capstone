@@ -1,7 +1,7 @@
-package assignment.capstone.tistory;
+package assignment.capstone.service.tistory;
 
-import assignment.capstone.dto.BlogInfo;
 import assignment.capstone.dto.Comment;
+import assignment.capstone.entity.Blog;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
@@ -16,15 +16,15 @@ import java.util.List;
 @Service
 public class CommentReader {
 
-    public List<Comment> read(BlogInfo blogInfo) {
+    public List<Comment> read(Blog blog) {
         List<Comment> comments = new ArrayList<>();
 
         try {
             String url = "https://www.tistory.com/apis/comment/list?"
-                    + "access_token=" + blogInfo.getAccessToken() + "&"
+                    + "access_token=" + blog.getAccessToken() + "&"
                     + "output=json&"
-                    + "blogName=" + blogInfo.getBlogName() + "&"
-                    + "postId=" + blogInfo.getPostId();
+                    + "blogName=" + blog.getBlogName() + "&"
+                    + "postId=" + blog.getPostId();
 
             URL obj = new URL(url);
 

@@ -1,6 +1,7 @@
 package assignment.capstone.tistory;
 
 import assignment.capstone.dto.ClientInfo;
+import assignment.capstone.service.tistory.AccessTokenParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

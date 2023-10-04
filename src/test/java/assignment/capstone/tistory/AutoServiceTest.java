@@ -1,6 +1,6 @@
 package assignment.capstone.tistory;
 
-import assignment.capstone.dto.BlogInfo;
+import assignment.capstone.entity.Blog;
 import assignment.capstone.service.AutoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,8 @@ class AutoServiceTest {
 
     @Test
     void autoComment() {
-        BlogInfo blogInfo = new BlogInfo("accessToken", 4, "blogName");
+        Blog blog = new Blog(1L,"accessToken", 4, "blogName");
 
-        assertDoesNotThrow(() -> autoService.autoCommentResponse(blogInfo));
+        assertDoesNotThrow(() -> autoService.autoCommentResponse(blog));
     }
 }

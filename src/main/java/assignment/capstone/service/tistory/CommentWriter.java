@@ -1,6 +1,6 @@
-package assignment.capstone.tistory;
+package assignment.capstone.service.tistory;
 
-import assignment.capstone.dto.BlogInfo;
+import assignment.capstone.entity.Blog;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -11,13 +11,13 @@ import java.net.URLEncoder;
 @Service
 public class CommentWriter {
 
-    public boolean write(BlogInfo blogInfo, String parentId, String content, boolean open) {
+    public boolean write(Blog blog, String parentId, String content, boolean open) {
         try {
             String url = "https://www.tistory.com/apis/comment/write?" +
-                    "access_token=" + URLEncoder.encode(blogInfo.getAccessToken(), "UTF-8") +
+                    "access_token=" + URLEncoder.encode(blog.getAccessToken(), "UTF-8") +
                     "&output=json" +
-                    "&blogName=" + URLEncoder.encode(blogInfo.getBlogName(), "UTF-8") +
-                    "&postId=" + URLEncoder.encode(String.valueOf(blogInfo.getPostId()), "UTF-8") +
+                    "&blogName=" + URLEncoder.encode(blog.getBlogName(), "UTF-8") +
+                    "&postId=" + URLEncoder.encode(String.valueOf(blog.getPostId()), "UTF-8") +
                     "&parentId=" + URLEncoder.encode(parentId, "UTF-8") +
                     "&content=" + URLEncoder.encode(content, "UTF-8") +
                     "&secret=" + (open ? 0 : 1);

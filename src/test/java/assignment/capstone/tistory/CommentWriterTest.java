@@ -1,6 +1,7 @@
 package assignment.capstone.tistory;
 
-import assignment.capstone.dto.BlogInfo;
+import assignment.capstone.entity.Blog;
+import assignment.capstone.service.tistory.CommentWriter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,12 +10,12 @@ class CommentWriterTest {
     @Test
     void writeComment() {
         CommentWriter commentWriter = new CommentWriter();
-        BlogInfo blogInfo = new BlogInfo("accessToken", 4, "blogName");
+        Blog blog = new Blog(1L, "accessToken", 4, "blogName");
 
         String parentId = "15766892";
         String content = "world";
         boolean open = true;
 
-        assertEquals(true, commentWriter.write(blogInfo, parentId, content, open));
+        assertEquals(true, commentWriter.write(blog, parentId, content, open));
     }
 }
