@@ -53,7 +53,7 @@ public class CommentReader {
                     String parentId = commentNode.path("parentId").asText();
                     String homepage = commentNode.path("homepage").asText();
                     String comment = commentNode.path("comment").asText();
-                    boolean open = Boolean.parseBoolean(commentNode.path("open").asText());
+                    boolean open = isOpen(commentNode.path("open").asText());
 
                     comments.add(new Comment(id, date, name, parentId, homepage, comment, open));
                 }
@@ -64,6 +64,10 @@ public class CommentReader {
         }
 
         return comments;
+    }
+
+    private boolean isOpen(String open) {
+        return open.equals("Y");
     }
 
 }

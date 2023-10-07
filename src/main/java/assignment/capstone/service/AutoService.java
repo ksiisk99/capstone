@@ -2,6 +2,7 @@ package assignment.capstone.service;
 
 import assignment.capstone.dto.Comment;
 import assignment.capstone.entity.Blog;
+import assignment.capstone.repository.BlogRepository;
 import assignment.capstone.service.gpt.ChatGptHandler;
 import assignment.capstone.service.tistory.CommentReader;
 import assignment.capstone.service.tistory.CommentWriter;
@@ -17,6 +18,7 @@ public class AutoService {
     private final ChatGptHandler chatGptHandler;
     private final CommentReader commentReader;
     private final CommentWriter commentWriter;
+    private final BlogRepository blogRepository;
 
     public void autoCommentResponse(Blog blog) {
         List<Comment> comments = commentReader.read(blog);
@@ -26,7 +28,11 @@ public class AutoService {
         List<String> commentResponses = chatGptHandler.createCommentResponses(comments);
 
         for (int i = 0; i < comments.size(); i++) {
-            commentWriter.write(blog, comments.get(i).getId(), commentResponses.get(i), comments.get(i).isOpen());
+            boolean isSuccess = commentWriter.write(blog, comments.get(i).getId(), commentResponses.get(i), comments.get(i).isOpen());
+            if (!isSuccess) {
+                blogRepository.delete(blog);
+                return;
+            }
         }
     }
 
