@@ -17,7 +17,7 @@ public class CommentScheduler {
     private final AutoService autoService;
     private final BlogRepository blogRepository;
 
-    @Scheduled(fixedDelay = 10000L)
+    @Scheduled(fixedDelay = 5000L)
     private void schedule() {
         log.info("schedule start");
         List<Blog> blogs = blogRepository.findAll();

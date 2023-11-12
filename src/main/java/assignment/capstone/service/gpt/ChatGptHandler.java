@@ -41,8 +41,9 @@ public class ChatGptHandler {
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", "text-davinci-003");
         requestBody.put("prompt", comment.getContent()); //일단 임시로 1개만 해놓자. 나중에 여러개 처리
-        requestBody.put("max_tokens", 500);
-        requestBody.put("temperature", 0.1F);
+        requestBody.put("max_tokens", 100);
+        requestBody.put("temperature", 0.7F);
+        requestBody.put("role", "user");
         requestBody.put("presence_penalty", 0);
         requestBody.put("n", 1);
 
